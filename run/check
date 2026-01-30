@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Run the testing app dev server
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+cd "$PROJECT_ROOT"
+
+deno fmt && deno fmt --check && deno lint && deno task check

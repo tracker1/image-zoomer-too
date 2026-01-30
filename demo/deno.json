@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "imports": {
+    "react": "npm:react@^18.3.1",
+    "react-dom": "npm:react-dom@^18.3.1",
+    "react-dom/client": "npm:react-dom@^18.3.1/client",
+    "@mantine/core": "npm:@mantine/core@^7.15.0",
+    "@mantine/hooks": "npm:@mantine/hooks@^7.15.0",
+    "eventemitter3": "npm:eventemitter3@^5.0.1",
+    "@/": "./src/"
+  }
+}

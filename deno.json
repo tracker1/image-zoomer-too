@@ -1,0 +1,72 @@
+{
+  "name": "@tracker1/image-zoomer-too",
+  "version": "0.1.0",
+  "description": "A React component for image viewing with zoom/pan support, using EventEmitter for external control",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/mod.tsx",
+    "./lib": "./src/lib.ts"
+  },
+  "publish": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "LICENSE",
+      "README.md"
+    ],
+    "exclude": [
+      "**/*.test.ts",
+      "**/*_test.ts",
+      "run/**",
+      "demo/**",
+      ".github/**",
+      ".claude/**"
+    ]
+  },
+  "imports": {
+    "react": "npm:react@^19.0.0",
+    "react/jsx-runtime": "npm:react@^19.0.0/jsx-runtime",
+    "@types/react": "npm:@types/react@^19.0.0",
+    "eventemitter3": "npm:eventemitter3@^5.0.1",
+    "@deno/dnt": "jsr:@deno/dnt@^0.42.3"
+  },
+  "compilerOptions": {
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "lint": {
+    "exclude": [
+      "demo/",
+      "npm/"
+    ]
+  },
+  "fmt": {
+    "exclude": [
+      "demo/",
+      "npm/",
+      "**/*.md"
+    ]
+  },
+  "tasks": {
+    "check": "deno check src/mod.tsx src/lib.ts src/useImageDimensions.ts",
+    "lint": "deno lint",
+    "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check src/",
+    "test": "deno test",
+    "build:npm": "deno run -A run/build_npm.ts",
+    "demo:install": "cd demo && deno install --allow-scripts",
+    "demo:dev": "cd demo && deno run -A --node-modules-dir npm:vite",
+    "demo:build": "cd demo && deno run -A --node-modules-dir npm:vite build",
+    "demo:preview": "cd demo && deno run -A --node-modules-dir npm:vite preview"
+  }
+}

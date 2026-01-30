@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="2000" viewBox="0 0 3000 2000">
+  <defs>
+    <linearGradient id="bg-large" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e"/>
+      <stop offset="50%" style="stop-color:#38ef7d"/>
+      <stop offset="100%" style="stop-color:#11998e"/>
+    </linearGradient>
+    <pattern id="grid-large" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    </pattern>
+    <pattern id="grid-small-large" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="3000" height="2000" fill="url(#bg-large)"/>
+  <rect width="3000" height="2000" fill="url(#grid-small-large)"/>
+  <rect width="3000" height="2000" fill="url(#grid-large)"/>
+
+  <!-- Corner markers -->
+  <g fill="white" font-family="system-ui, sans-serif" font-size="24">
+    <text x="50" y="50">Top Left (0,0)</text>
+    <text x="2700" y="50">Top Right (3000,0)</text>
+    <text x="50" y="1970">Bottom Left (0,2000)</text>
+    <text x="2600" y="1970">Bottom Right (3000,2000)</text>
+  </g>
+
+  <!-- Center content -->
+  <text x="1500" y="900" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="120" font-weight="700">Large Image</text>
+  <text x="1500" y="1050" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="72">3000 x 2000 px</text>
+  <text x="1500" y="1150" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="36">Scroll/pan to explore the full image</text>
+
+  <!-- Grid reference points -->
+  <g fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="16">
+    <text x="500" y="500">500,500</text>
+    <text x="1000" y="500">1000,500</text>
+    <text x="1500" y="500">1500,500</text>
+    <text x="2000" y="500">2000,500</text>
+    <text x="2500" y="500">2500,500</text>
+
+    <text x="500" y="1000">500,1000</text>
+    <text x="2500" y="1000">2500,1000</text>
+
+    <text x="500" y="1500">500,1500</text>
+    <text x="1000" y="1500">1000,1500</text>
+    <text x="1500" y="1500">1500,1500</text>
+    <text x="2000" y="1500">2000,1500</text>
+    <text x="2500" y="1500">2500,1500</text>
+  </g>
+
+  <!-- Visual markers at grid intersections -->
+  <g fill="rgba(255,255,255,0.3)">
+    <circle cx="500" cy="500" r="10"/>
+    <circle cx="1000" cy="500" r="10"/>
+    <circle cx="1500" cy="500" r="10"/>
+    <circle cx="2000" cy="500" r="10"/>
+    <circle cx="2500" cy="500" r="10"/>
+    <circle cx="500" cy="1000" r="10"/>
+    <circle cx="1500" cy="1000" r="15"/>
+    <circle cx="2500" cy="1000" r="10"/>
+    <circle cx="500" cy="1500" r="10"/>
+    <circle cx="1000" cy="1500" r="10"/>
+    <circle cx="1500" cy="1500" r="10"/>
+    <circle cx="2000" cy="1500" r="10"/>
+    <circle cx="2500" cy="1500" r="10"/>
+  </g>
+</svg>

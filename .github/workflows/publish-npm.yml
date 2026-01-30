@@ -1,0 +1,37 @@
+name: Publish to NPM
+
+on:
+  workflow_call:
+  release:
+    types: [published]
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Build NPM package
+        run: deno task build:npm
+
+      - name: Upgrade NPM for OIDC support
+        run: npm i -g npm@latest
+
+      - name: Publish to NPM
+        # need to clear the NODE_AUTH_TOKEN for OIDC to work with github.
+        run: NODE_AUTH_TOKEN="" npm publish --provenance --access public
+        working-directory: ./npm
