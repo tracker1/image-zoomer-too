@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/tracker1/image-zoomer-too/compare/v0.1.1...v1.0.0) (2026-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* Full Release
+
+### Features
+
+* Full Release ([ddb18d2](https://github.com/tracker1/image-zoomer-too/commit/ddb18d2e61dfba1961a37645e84599e56f56c963))
+
 ## [0.1.1](https://github.com/tracker1/image-zoomer-too/compare/v0.1.0...v0.1.1) (2026-01-30)
 
 
