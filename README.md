@@ -15,8 +15,6 @@ provide your own zoom controls.
 - **Touch Gestures** - Pinch to zoom, drag to pan on touch devices
 - **External Control** - Use EventEmitter to control zoom from your own UI
   components
-- **Framework Agnostic Core** - Core library works without React; React wrapper
-  provided for convenience
 - **No Style Injection** - Styles are applied directly to elements, no global
   CSS required
 
@@ -124,37 +122,6 @@ Returns an object with:
 | `url`     | `string \| null \| undefined` | Image URL to load |
 
 Returns `{ width: number, height: number } | null`
-
-### Core Library Exports (`/lib`)
-
-#### `initZoomer(container, emitter)`
-
-| Parameter   | Type                 | Description                               |
-| ----------- | -------------------- | ----------------------------------------- |
-| `container` | `HTMLElement`        | Container with `data-image-url` attribute |
-| `emitter`   | `ZoomerEventEmitter` | EventEmitter for zoom commands            |
-
-Returns `ZoomerInstance`:
-
-| Method          | Description          |
-| --------------- | -------------------- |
-| `getScale()`    | Current zoom scale   |
-| `getMinScale()` | Minimum (fit) scale  |
-| `getMaxScale()` | Maximum scale (3.0)  |
-| `zoomIn()`      | Zoom in by one step  |
-| `zoomOut()`     | Zoom out by one step |
-| `zoomReset()`   | Reset to fit size    |
-| `destroy()`     | Clean up and remove  |
-
-### Events
-
-The emitter responds to these events:
-
-| Event        | Description       |
-| ------------ | ----------------- |
-| `zoom-in`    | Zoom in by 25%    |
-| `zoom-out`   | Zoom out by 25%   |
-| `zoom-reset` | Reset to fit size |
 
 ## Controls
 

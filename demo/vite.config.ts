@@ -4,13 +4,16 @@ import { resolve } from "node:path";
 import process from "node:process";
 
 export default defineConfig({
-  base: process.env.CI ? "/simple-image-viewer/" : "/",
+  base: process.env.CI ? "/image-zoomer-too/" : "/",
   plugins: [react()],
   resolve: {
     alias: {
       "@": resolve(import.meta.dirname!, "src"),
       // Resolve eventemitter3 from demo's node_modules for parent src imports
-      "eventemitter3": resolve(import.meta.dirname!, "node_modules/eventemitter3"),
+      "eventemitter3": resolve(
+        import.meta.dirname!,
+        "node_modules/eventemitter3",
+      ),
     },
   },
 });
