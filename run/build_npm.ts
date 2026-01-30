@@ -96,6 +96,7 @@ await build({
     // Clean up package.json
     const packageJsonPath = "npm/package.json";
     const packageJson = JSON.parse(Deno.readTextFileSync(packageJsonPath));
+    packageJson.version = version;
     delete packageJson.scripts;
     delete packageJson.test;
     delete packageJson.devDependencies.picocolors;
