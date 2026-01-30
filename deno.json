@@ -1,6 +1,6 @@
 {
   "name": "@tracker1/image-zoomer-too",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React component for image viewing with zoom/pan support, using EventEmitter for external control",
   "license": "MIT",
   "exports": {
