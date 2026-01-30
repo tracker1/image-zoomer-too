@@ -1,27 +1,35 @@
 import {
+  ActionIcon,
   AppShell,
+  Box,
   Button,
   Group,
-  Stack,
-  Title,
-  Text,
   SegmentedControl,
-  Box,
-  ActionIcon,
+  Stack,
+  Text,
+  Title,
 } from "@mantine/core";
 import { useState } from "react";
 import { ImageZoomer, useImageZoomer } from "../../src/mod.tsx";
 
 type ImageSize = "small" | "large";
 
-const IMAGES: Record<ImageSize, { url: string; label: string; dimensions: string }> = {
+function getImageSrc(path) {
+  // Use import.meta.env.BASE_URL for dynamically constructed public paths
+  return `${import.meta.env.BASE_URL}${path}`;
+}
+
+const IMAGES: Record<
+  ImageSize,
+  { url: string; label: string; dimensions: string }
+> = {
   small: {
-    url: "/small-image.svg",
+    url: "small-image.svg",
     label: "Small Image",
     dimensions: "300 x 100 px",
   },
   large: {
-    url: "/large-image.svg",
+    url: "large-image.svg",
     label: "Large Image",
     dimensions: "3000 x 2000 px",
   },
@@ -84,7 +92,11 @@ export function App() {
               >
                 +
               </ActionIcon>
-              <Button variant="subtle" size="compact-sm" onClick={zoomer.zoomReset}>
+              <Button
+                variant="subtle"
+                size="compact-sm"
+                onClick={zoomer.zoomReset}
+              >
                 Reset
               </Button>
             </Group>
@@ -102,14 +114,15 @@ export function App() {
           >
             <ImageZoomer
               key={selectedImage}
-              imageUrl={currentImage.url}
+              imageUrl={getImageSrc(currentImage.url)}
               emitter={zoomer.emitter}
               onZoomerReady={zoomer.onZoomerReady}
             />
           </Box>
 
           <Text size="xs" c="dimmed" ta="center">
-            Use mouse wheel to zoom, drag to pan. Pinch gestures supported on touch devices.
+            Use mouse wheel to zoom, drag to pan. Pinch gestures supported on
+            touch devices.
           </Text>
         </Stack>
       </AppShell.Main>
